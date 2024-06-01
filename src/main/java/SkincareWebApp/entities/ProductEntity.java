@@ -6,15 +6,16 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-import javax.annotation.processing.Generated;
 import java.util.Date;
 
 @Entity
 @Table(name="PRODUCT")
+@Data
 
-public class Product {
+public class ProductEntity {
 
         @Id
+        @NotNull
         @Column(name = "PRODUCT_ID")
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Long Id;
@@ -39,6 +40,9 @@ public class Product {
 
         @Column(name = "SKIN_TYPE")
         private SkinType skinType;
+
+        @Column(name = "CATEGORY")
+        private ProductCategory category;
 
 
 

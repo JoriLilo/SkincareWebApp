@@ -1,9 +1,11 @@
 package SkincareWebApp.entities;
 
 
+import SkincareWebApp.model.TypeOfPayment;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @Entity
@@ -22,6 +24,8 @@ public class UserOrder {
     private BigDecimal totalAmount;
     @Column(name = "OrderDate", nullable = false)
     private LocalDateTime orderDate;
+    @Column(name ="TypeOfPayment")
+    private TypeOfPayment typeOfPayment;
 
 
 }

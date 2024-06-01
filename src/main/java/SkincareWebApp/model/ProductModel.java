@@ -1,5 +1,6 @@
 package SkincareWebApp.model;
 
+import SkincareWebApp.entities.ProductCategory;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -28,5 +29,7 @@ public class ProductModel {
     private Integer quantity;
     @NotNull
     private SkinType skinType;
+    @NotNull
+    private ProductCategory category;
 
 }

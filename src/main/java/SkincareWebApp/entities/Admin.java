@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Entity
 @AllArgsConstructor
@@ -33,6 +35,6 @@ public class Admin {
     private String password;
 
     @Column(name = "PRODUCT_lIST")
-    private String ProductList;
+    private List<ProductEntity> productEntityList;
 
 }
