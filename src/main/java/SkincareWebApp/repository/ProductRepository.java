@@ -2,6 +2,7 @@ package SkincareWebApp.repository;
 
 import SkincareWebApp.entities.ProductCategory;
 import SkincareWebApp.entities.ProductEntity;
+import SkincareWebApp.entities.SkinType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,6 +19,11 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     @Query("select P from ProductEntity P where P.name = :name")
     Optional<ProductEntity> findAllByName(@Param("name") String name);
 
+    @Query("select P from ProductEntity P where P.category = :category")
+    Optional<ProductEntity> findAllByCategory(@Param("category") ProductCategory category);
+
+    @Query("select P from ProductEntity P where P.skinType = :skinType")
+    Optional<ProductEntity> findAllByCategory(@Param("skinType") SkinType skinType);
 
 
 
