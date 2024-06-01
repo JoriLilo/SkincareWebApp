@@ -14,8 +14,10 @@
     <name>SkincareApp</name>
     <description>Demo project for Spring Boot</description>
     <properties>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <java.version>22</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

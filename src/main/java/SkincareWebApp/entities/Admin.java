@@ -34,7 +34,9 @@ public class Admin {
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @Column(name = "PRODUCT_lIST")
+
+    @OneToMany
+    @JoinColumn(name = "product_list")
     private List<ProductEntity> productEntityList;
 
 }

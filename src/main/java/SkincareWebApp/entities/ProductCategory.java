@@ -2,6 +2,8 @@ package SkincareWebApp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 //import org.hibernate.annotations.Table;
 
 @Entity
@@ -12,9 +14,10 @@ public class ProductCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
+
     @Column(name = "CategoryName", nullable = false)
     private String categoryName;
-    @Column(name = "ProductID", nullable = false)
-    private Long productId;
 
+    @OneToMany
+    private List<ProductEntity> product;
 }

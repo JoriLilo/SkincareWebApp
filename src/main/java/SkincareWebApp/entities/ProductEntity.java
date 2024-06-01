@@ -1,12 +1,12 @@
 package SkincareWebApp.entities;
 
 
-import SkincareWebApp.model.SkinType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="PRODUCT")
@@ -18,7 +18,8 @@ public class ProductEntity {
         @NotNull
         @Column(name = "PRODUCT_ID")
         @GeneratedValue(strategy = GenerationType.AUTO)
-        private Long Id;
+        private Long productId;
+
         @Column(name = "NAME")
         @NotNull
         private String name;
@@ -41,9 +42,15 @@ public class ProductEntity {
         @Column(name = "SKIN_TYPE")
         private SkinType skinType;
 
-        @Column(name = "CATEGORY")
+        @JoinColumn (name = "CATEGORY")
+        @ManyToOne
         private ProductCategory category;
 
+        @ManyToOne
+        private Admin admin;
+
+        @ManyToMany
+        private List<Orders> orders;
 
 
 

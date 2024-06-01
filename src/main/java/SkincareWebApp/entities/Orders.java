@@ -1,29 +1,34 @@
 package SkincareWebApp.entities;
 
-
-import SkincareWebApp.model.TypeOfPayment;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
+
 @Entity
-@Table(name = "UserOrder")
+@Table(name = "Orders")
 @Data
-public class UserOrder {
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "OrderID")
+    @Column(name = "Orders_Id")
     private Long orderId;
-    @Column(name = "ProductID", nullable = false)
-    private Long productId;
-    @Column(name = "UserID", nullable = false)
-    private Long userId;
+
+    @ManyToMany
+    private List<ProductEntity> productId;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity userId;
+
     @Column(name = "TotalAmount", nullable = false)
     private BigDecimal totalAmount;
+
     @Column(name = "OrderDate", nullable = false)
     private LocalDateTime orderDate;
+
     @Column(name ="TypeOfPayment")
     private TypeOfPayment typeOfPayment;
 
