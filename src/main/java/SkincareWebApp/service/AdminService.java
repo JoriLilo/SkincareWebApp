@@ -1,31 +1,57 @@
 package SkincareWebApp.service;
 
 import SkincareWebApp.entities.Admin;
+import SkincareWebApp.entities.ProductEntity;
 import SkincareWebApp.repository.AdminRepository;
+import SkincareWebApp.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
-
+@Service
 public class AdminService {
-
     @Autowired
-    private final AdminRepository repository;
+    private AdminRepository adminRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
-    public AdminService(AdminRepository repository) {
-        this.repository = repository;
+
+    public List<Admin> findAllAdmins() {
+        return adminRepository.findAll();
+    }
+
+    public Optional<Admin> findAdminById(Long id) {
+        return adminRepository.findById(id);
     }
 
 
-    public Optional<Admin> findById(Long id){
-        return repository.findById(id);
+
+    public Admin saveAdmin(Admin admin) {
+        return adminRepository.save(admin);
     }
 
-    public Admin save(Admin entity) {
-        return repository.save(entity);
+    public void deleteAdmin(Long id) {
+        adminRepository.deleteById(id);
     }
+
+    public List<ProductEntity> findProductsByAdmin(Admin admin) {
+        return productRepository.findByAdmin(admin);
+    }
+
+    public ProductEntity saveProduct(ProductEntity productEntity) {
+        return productRepository.save(productEntity);
+    }
+
+    public void deleteProduct(Long id) {
+        productRepository.deleteById(id);
+    }
+
+
+
 
     public Admin updateAdmin(Admin model) throws Exception {
-        Optional<Admin> admin = findById(model.getId());
+        Optional<Admin> admin = findAdminById(model.getId());
 
         admin.ifPresent(s -> {
             s.setFirstName(model.getFirstName());
@@ -36,11 +62,11 @@ public class AdminService {
         });
 
        Admin updated = admin.orElseThrow(() -> new Exception("Cannot find admin!"));
-        return repository.save(updated);
+        return adminRepository.save(updated);
     }
 
     public void delete(Long id) throws Exception {
-        repository.delete(findById(id).orElseThrow(() -> new Exception("Cannot find admin!")));
+        adminRepository.delete(findAdminById(id).orElseThrow(() -> new Exception("Cannot find admin!")));
     }
 
 

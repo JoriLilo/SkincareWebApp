@@ -1,5 +1,6 @@
 package SkincareWebApp.repository;
 
+import SkincareWebApp.entities.Admin;
 import SkincareWebApp.entities.ProductCategory;
 import SkincareWebApp.entities.ProductEntity;
 import SkincareWebApp.entities.SkinType;
@@ -26,10 +27,5 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     Optional<ProductEntity> findAllBySkinType(@Param("skinType") SkinType skinType);
 
 
-
-
-
-
-
-
+    List<ProductEntity> findByAdmin(Admin admin);
 }

@@ -1,5 +1,6 @@
 package SkincareWebApp.service;
 
+import SkincareWebApp.entities.Admin;
 import SkincareWebApp.entities.ProductCategory;
 import SkincareWebApp.entities.ProductEntity;
 import SkincareWebApp.entities.SkinType;
@@ -15,6 +16,11 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
+    public Optional<ProductEntity> findById(Long id){
+        return repository.findById(id);
+    }
+
+
     public Optional<ProductEntity> findAllByName(String name){
         return repository.findAllByName(name);
     }
@@ -29,5 +35,14 @@ public class ProductService {
     public Optional<ProductEntity> findBySkinType(SkinType skinType){
         return repository.findAllBySkinType(skinType);
     }
+
+    public ProductEntity save(ProductEntity entity) {
+        return repository.save(entity);
+    }
+
+    public void delete(Long id) throws Exception {
+        repository.delete(findById(id).orElseThrow(() -> new Exception("Cannot find admin!")));
+    }
+
 
 }
