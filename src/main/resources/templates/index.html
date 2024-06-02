@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Glowy Skin Shop</title>
+    <title>Skincare Web App</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
     <link rel="stylesheet" th:href="@{/css/custom.css}"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" th:href="@{/}">Glowy Skin Shop</a>
+    <a class="navbar-brand" th:href="@{/}">Skincare Web App</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,9 +16,6 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/products}">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/orders}">Orders</a>
@@ -28,6 +26,12 @@
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/users}">Users</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/products}">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/product-categories}">Product Categories</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -36,23 +40,23 @@
     <div th:replace="~{fragments/footer :: footer}"></div>
     <div class="row">
         <div class="col-md-12">
-            <h1 th:text="${title}">Welcome to Glowy Skin Shop</h1>
+            <h1 th:text="${title}">Welcome to Skincare Web App</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-3">
-            <img th:src="@{/images/biore-uv-aqua-rich-watery-gel-spf-50-pa-90ml.jpg}" alt="Bioré UV Aqua Rich Watery Gel SPF 50+ PA++++ 90ml">
-            <h2 th:text="${'Bioré UV Aqua Rich Watery Gel SPF 50+ PA++++ 90ml'}">Bioré UV Aqua Rich Watery Gel SPF 50+ PA++++ 90ml</h2>
-            <p th:text="${'This is a description of the product'}">This is a description of the product</p>
-            <a th:href="@{/products/biore-uv-aqua-rich-watery-gel-spf-50-pa-90ml}" class="btn btn-primary">Buy Now</a>
+            <h2 th:text="${'Orders'}">Orders</h2>
+            <ul th:each="order : ${orders}">
+                <li th:text="${order.id}">Order ID</li>
+                <li th:text="${order.user.name}">User</li>
+                <li th:text="${order.products}">Products</li>
+            </ul>
         </div>
         <div class="col-md-3">
-            <img th:src="@{/images/purito-cica-clearing-bb-cream-30ml.jpg}" alt="Purito Cica Clearing BB Cream 30ml">
-            <h2 th:text="${'Purito Cica Clearing BB Cream 30ml'}">Purito Cica Clearing BB Cream 30ml</h2>
-            <p th:text="${'This is a description of the product'}">This is a description of the product</p>
-            <a th:href="@{/products/purito-cica-clearing-bb-cream-30ml}" class="btn btn-primary">Buy Now</a>
+            <h2 th:text="${'Admins'}">Admins</h2>
+            <ul th:each="admin : ${admins}">
+                <li th:text="${admin.id}">Admin</li></ul>
         </div>
-        <!-- Add more products here -->
     </div>
 </div>
 </body>

@@ -17,17 +17,17 @@ public class OrdersService {
         // add
         public Orders addOrder(Orders order) {
             return ordersRepository.save(order);
-        }
+        }}
 
         // makeAnOrder
-        public void makeAnOrder(Long orderId) {
-            ordersRepository.makeAnOrder(orderId);
-        }
-
-        // addProductsToOrderList
-        public void addProductsToOrderList(Long orderId, List<ProductEntity> products) {
-            ordersRepository.addProductsToOrderList(orderId, products);
-        }
-    }
+//        public void makeAnOrder(Long orderId) {
+//            ordersRepository.makeAnOrder(orderId);
+//        }
+//
+//        // addProductsToOrderList
+//        public void addProductsToOrderList(Long orderId, List<ProductEntity> products) {
+//            ordersRepository.addProductsToOrderList(orderId, products);
+//        }
+//    }
 
 

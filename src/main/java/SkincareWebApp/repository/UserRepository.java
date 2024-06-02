@@ -1,7 +1,5 @@
 package SkincareWebApp.repository;
 
-import SkincareWebApp.entities.Admin;
-import SkincareWebApp.entities.ProductEntity;
 import SkincareWebApp.entities.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -18,7 +16,7 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
         // find
         List<UserEntity> findAll();
 
-        UserEntity getById(Long id);
+        Optional<UserEntity> findById(Long id);
 
         // add
         UserEntity save(UserEntity userEntity);
@@ -34,4 +32,4 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     }
 
 
-}
+
