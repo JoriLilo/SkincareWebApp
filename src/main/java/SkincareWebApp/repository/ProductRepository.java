@@ -16,14 +16,14 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
     List<ProductEntity> findAll();
 
-    @Query("select P from ProductEntity P where P.name = :name")
-    Optional<ProductEntity> findAllByName(@Param("name") String name);
+
+    Optional<ProductEntity> findAllByName(String name);
 
     @Query("select P from ProductEntity P where P.category = :category")
     Optional<ProductEntity> findAllByCategory(@Param("category") ProductCategory category);
 
     @Query("select P from ProductEntity P where P.skinType = :skinType")
-    Optional<ProductEntity> findAllByCategory(@Param("skinType") SkinType skinType);
+    Optional<ProductEntity> findAllBySkinType(@Param("skinType") SkinType skinType);
 
 
 

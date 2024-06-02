@@ -2,6 +2,7 @@ package SkincareWebApp.service;
 
 import SkincareWebApp.entities.ProductCategory;
 import SkincareWebApp.entities.ProductEntity;
+import SkincareWebApp.entities.SkinType;
 import SkincareWebApp.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -25,5 +26,8 @@ public class ProductService {
         return repository.findAllByCategory(category);
     }
 
+    public Optional<ProductEntity> findBySkinType(SkinType skinType){
+        return repository.findAllBySkinType(skinType);
+    }
 
 }
