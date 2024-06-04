@@ -26,9 +26,9 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
         // editFavouriteList
 
-        @Modifying
-        @Query("UPDATE UserEntity u SET u.favourite =?2 WHERE u.id =?1")
-        void editFavouriteList(Long id, List<String> favouriteList);
+//        @Modifying
+//        @Query("UPDATE UserEntity u SET u.favourite =?2 WHERE u.id =?1")
+//        void editFavouriteList(Long id, List<String> favouriteList);
     }
 
 
