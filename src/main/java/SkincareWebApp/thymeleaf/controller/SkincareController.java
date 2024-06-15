@@ -66,11 +66,11 @@ public class SkincareController {
         return "users";
     }
 
-    @GetMapping("/products")
+    @GetMapping("/produktet")
     public String products(Model model) {
         List<ProductEntity> products = productService.findAll();
-        model.addAttribute("products", products);
-        return "products";
+        model.addAttribute("produktet", products);
+        return "produktet";
     }
 
     @GetMapping("/product-categories")
