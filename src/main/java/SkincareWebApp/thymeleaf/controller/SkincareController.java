@@ -79,4 +79,9 @@ public class SkincareController {
                        model.addAttribute("productCategories", productCategories);
              return "product-categories";
            }
+
+
+
+
+
 }
