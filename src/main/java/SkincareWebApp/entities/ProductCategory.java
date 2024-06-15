@@ -20,4 +20,6 @@ public class ProductCategory {
 
     @OneToMany
     private List<ProductEntity> product;
+
+
 }

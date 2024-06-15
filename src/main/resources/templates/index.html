@@ -35,14 +35,11 @@
         </ul>
     </div>
 </nav>
-<div class="container">
-    <div th:replace="~{fragments/header :: header}"></div>
-    <div th:replace="~{fragments/footer :: footer}"></div>
-    <div class="row">
+
         <div class="col-md-12">
             <h1 th:text="${title}">Welcome to Skincare Web App</h1>
         </div>
-    </div>
+
     <div class="row">
         <div class="col-md-3">
             <h2 th:text="${'Orders'}">Orders</h2>
