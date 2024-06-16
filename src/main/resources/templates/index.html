@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkinSerenity</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="fontAwesome/css/all.min.css">
     <link rel="stylesheet" href="css/templateMo-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
-   
+
     <div id="loader-wrapper">
         <div id="loader"></div>
-   
+
     </div>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -46,10 +46,27 @@
                         </div>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produktet</a>
+                    <div class="dropdown-menu dropdown-menu-wide">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul>
+                                    <li><a href="anua.html">Lares</a></li>
+                                    <li><a href="bautyOfJoseon.html">Krem dielli</a></li>
+                                    <li><a href="produktet.html">Serum</a></li>
+                                    <li><a href="produktet.html">Toner</a></li>
+                                    <li><a href="produktet.html">Kremi i syve</a></li>
+                                    <li><a href="produktet.html">Hidratues</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-3" href="wishlist.html"><span class="cart-icon">&#128722;</span></a>
-                    
-            
+
+
                 </ul>
             </div>
         </div>
@@ -78,20 +95,21 @@
                     <img src="https://siren.al/729-large_default/anua-heartleaf-77-soothing-toner.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <a href="produktet.html"></a>
-                        
-                    </figcaption>                    
+
+                    </figcaption>
                 </figure>
                 <div class="d-flex justify-content-between tm-text-gray">
                     <span> Anua Heartleaf 77% Soothing Toner</span>
                 </div>
                 <span>2,000 L</span>
             </div>
+
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
                     <img src="https://koreanskincare.ch/cdn/shop/files/Product-page-sizes_a48790c9-362d-4f9b-acd4-9768ff7835ba.jpg?v=1698388459" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <a href="produkt2.html">View more</a>
-                    </figcaption>                    
+                    </figcaption>
                 </figure>
                 <div class="d-flex justify-content-between tm-text-gray">
                     <span>Anua Heartleaf Pore Control Cleansing Oil</span>
@@ -100,10 +118,22 @@
                 </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
                 <figure class="effect-ming tm-video-item">
+                    <img src="https://www.mikaela-beauty.com/cdn/shop/products/AX6H1362w_1200x1200.jpg?v=1656401303" alt="Image" class="img-fluid">
+                    <figcaption class="d-flex align-items-center justify-content-center">
+                        <a href="produkt2.html">View more</a>
+                    </figcaption>
+                </figure>
+                <div class="d-flex justify-content-between tm-text-gray">
+                    <span>Innisfree hidratues</span>
+                </div>
+                <span>2,100L</span>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">
+                <figure class="effect-ming tm-video-item">
                     <img src="https://en.isntree.com/storage/isskin83EN/www/prefix/product/2022/22/O/product.14.165413670280808.jpg" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <a href="bautyOfJoseon.html">View more</a>
-                    </figcaption>                    
+                    </figcaption>
                 </figure>
                 <div class="d-flex justify-content-between tm-text-gray">
                 <span>Hyalorunic Acid Aqua Gel Cream</span>
@@ -115,13 +145,16 @@
                     <img src="https://koreanskincare.es/cdn/shop/files/boj_reliefsun.webp?v=1690402369" alt="Image" class="img-fluid">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <a href="bautyOfJoseon.html">View More</a>
-                    </figcaption>                    
+                    </figcaption>
                 </figure>
                 <div class="d-flex justify-content-between tm-text-gray">
                     <span>Beauty of Joseon Krem dielli</span>
                 </div>
                 <span>2,900L</span>
             </div>
+
+
+
     </div>
 
     <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
@@ -130,9 +163,9 @@
 
                 <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
                     <h3 class="tm-text-primary mb-4 tm-footer-title">About SkinSerenity</h3>
-                    <p>SkinSerenity është dyqani i parë dhe distributori me i madh i markave me të njohura koreane si 
-                        Purito, Anua, Isntree, Iunik, Neogen, Lador etj. 
-                        Të gjitha produktet importohen direkt nga Koreja e Jugut duke ju ofruar garanci per produkte 100% autentike. 
+                    <p>SkinSerenity është dyqani i parë dhe distributori me i madh i markave me të njohura koreane si
+                        Purito, Anua, Isntree, Iunik, Neogen, Lador etj.
+                        Të gjitha produktet importohen direkt nga Koreja e Jugut duke ju ofruar garanci per produkte 100% autentike.
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 px-5 mb-5">
@@ -162,10 +195,10 @@
                 </form>
                 <hr>
             </div>
-            
+
             <div class="row">
                 <div class="col-lg-8 col-md-7 col-12 px-5 mb-3">
-                    SkinSerenity @2024. 
+                    SkinSerenity @2024.
                     <br>
                     Te gjitha te drejtat te rezervuara.
                 </div>
@@ -173,7 +206,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="js/plugins.js"></script>
     <script>
         $(window).on("load", function() {

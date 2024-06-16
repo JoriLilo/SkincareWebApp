@@ -34,7 +34,7 @@ public class SkincareController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index(Model model) {
         List<UserEntity> users = userRepository.findAll();
         List<Orders> orders = orderRepository.findAll();
@@ -48,16 +48,11 @@ public class SkincareController {
     @GetMapping("/orders")
     public String orders(Model model) {
         List<Orders> orders = orderRepository.findAll();
-        model.addAttribute("orders", orders);
-        return "orders";
+        model.addAttribute("wishlist", orders);
+        return "wishlist";
     }
 
-    @GetMapping("/admin")
-    public String admins(Model model) {
-        List<Admin> admin = new ArrayList<Admin>();
-        model.addAttribute("Admin", admin);
-        return "admin" ;
-    }
+
 
     @GetMapping("/users")
     public String users(Model model) {
@@ -73,12 +68,13 @@ public class SkincareController {
         return "produktet";
     }
 
-    @GetMapping("/product-categories")
+    @GetMapping("/anua")
    public String productCategories(Model model) {
                List<ProductCategory> productCategories = new ArrayList<ProductCategory>();
-                       model.addAttribute("productCategories", productCategories);
-             return "product-categories";
+                       model.addAttribute("anua", productCategories);
+             return "anua";
            }
+
 
 
 
